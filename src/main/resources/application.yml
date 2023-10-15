@@ -8,6 +8,8 @@ spring:
       ddl-auto: update
     show-sql: true
 server:
-  port: 8082
+  servlet:
+    context-path: test
+  port: 8083
 
 
