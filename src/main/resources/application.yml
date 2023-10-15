@@ -9,7 +9,7 @@ spring:
     show-sql: true
 server:
   servlet:
-    context-path: test
+    context-path: /test
   port: 8083
 
 
