@@ -45,18 +45,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            node('Built-In Node') {
-                archiveArtifacts artifacts: 'target/*.war', allowEmptyArchive: true
-            }
-        }
-        success {
-            echo 'Deployment to Tomcat was successful!'
-        }
-        failure {
-            echo 'Deployment to Tomcat failed.'
-        }
-    }
 }
