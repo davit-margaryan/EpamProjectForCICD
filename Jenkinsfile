@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     
     environment {
         SONAR_TOKEN = credentials('sqp_10b9910510988459a7aa105aea4bd292ea786576')
@@ -48,7 +48,9 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'target/*.war', allowEmptyArchive: true
+            node {
+                archiveArtifacts artifacts: 'target/*.war', allowEmptyArchive: true
+            }
         }
         success {
             echo 'Deployment to Tomcat was successful!'
