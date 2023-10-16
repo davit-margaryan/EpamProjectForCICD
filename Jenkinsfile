@@ -48,7 +48,9 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'target/*.war', allowEmptyArchive: true
+            node {
+                archiveArtifacts artifacts: 'target/*.war', allowEmptyArchive: true
+            }
         }
         success {
             echo 'Deployment to Tomcat was successful!'
