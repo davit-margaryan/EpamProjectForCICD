@@ -48,7 +48,7 @@ pipeline {
 
     post {
         always {
-            node('your-agent-label') {
+            node('Built-In Node') {
                 archiveArtifacts artifacts: 'target/*.war', allowEmptyArchive: true
             }
         }
