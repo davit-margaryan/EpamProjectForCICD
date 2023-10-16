@@ -48,7 +48,7 @@ pipeline {
 
     post {
         always {
-            node {
+            node('Built-In Node') {
                 archiveArtifacts artifacts: 'target/*.war', allowEmptyArchive: true
             }
         }
