@@ -36,7 +36,7 @@ pipeline {
         stage('Deploy to Tomcat') {
             steps {
                 script {
-                    def warFile = findFiles(glob: 'target/*.war')[0]]
+                    def warFile = findFiles(glob: 'target/*.war')[0]
                     def warFileName = warFile.getName()
                     
                     sh "curl -T ${warFile} http://${TOMCAT_USER}:${TOMCAT_PASS}@localhost:8082/manager/text/deploy?path=/test&update=true"
