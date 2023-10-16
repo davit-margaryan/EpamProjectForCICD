@@ -5,6 +5,7 @@ pipeline {
         SONAR_TOKEN = credentials('sqp_10b9910510988459a7aa105aea4bd292ea786576')
         TOMCAT_USER = credentials('davit') 
         TOMCAT_PASS = credentials('davit') 
+    }
 
     stages {
         stage('Checkout') {
